@@ -23,7 +23,11 @@ public class Push_Buttons : MonoBehaviour
 
     GameObject subtitle;
 
+    GameObject BGM;
+
     AudioSource Clear_Lock;
+
+    AudioSource Smog_sound;
 
     public GameObject smogSystem;
     public GameObject FadeSystem;
@@ -41,6 +45,9 @@ public class Push_Buttons : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        BGM = GameObject.Find("First_bgm");
+        Smog_sound = GameObject.Find("Windy_sound").GetComponent<AudioSource>();
+
         subtitle = GameObject.Find("Canvas_Elevator").transform.GetChild(3).gameObject;
 
         Password = transform.GetChild(9);
@@ -87,10 +94,11 @@ public class Push_Buttons : MonoBehaviour
         //Get subtitle
         GameObject.Find("Subtitle_bar").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         subtitle.SetActive(true);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
 
         //Get smokes
         smogSystem.GetComponent<Fade>().DoFade(3.5f);
+        Smog_sound.Play();
         //Clear_Windy.Play();
 
         yield return new WaitForSeconds(4.2f);
@@ -102,6 +110,8 @@ public class Push_Buttons : MonoBehaviour
 
         
         //Change Stage
+        BGM.SetActive(false);
+
         yield return new WaitForSeconds(2f);
         smogSystem.GetComponent<Fade>().StopFade(0.1f);
         Stage3.SetActive(true);
@@ -132,6 +142,7 @@ public class Push_Buttons : MonoBehaviour
     {
         //Wrong Sound가 출력 중에는 함수 진행 X
         if (wrong_event) return;
+        if (password_index == 3) return;
 
         password_num[password_index] = num;
         Render[password_index].sprite = numbers[num];

@@ -11,9 +11,12 @@ public class Movebackground3 : MonoBehaviour
     public GameObject Orgel;
     public GameObject Piano;
 
+    AudioSource move_sound;
+
     void Start()
     {
 
+        move_sound = GameObject.Find("Move_Background").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,6 +29,7 @@ public class Movebackground3 : MonoBehaviour
     {
         if (DoStage3.Stage3_Controll == false)
         {
+            move_sound.Play();
             background.transform.position = new Vector3(background.transform.position.x * -1, background.transform.position.y, background.transform.position.z);
             if (!rotation)
             {

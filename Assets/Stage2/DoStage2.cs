@@ -12,9 +12,11 @@ public class DoStage2 : MonoBehaviour
     GameObject Intro;
     GameObject[] Subtitles = new GameObject[3];
 
+
     // Start is called before the first frame update
     void Start()
     {
+
         Intro = GameObject.Find("Canvas_Elevator");
         for(int i = 0; i < 3; i++)
         {

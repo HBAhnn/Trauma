@@ -10,9 +10,13 @@ public class MoveBackground : MonoBehaviour
 
     public GameObject Beaker;
     public GameObject Lock;
+
+    AudioSource move_sound;
+
     void Start()
     {
-        
+
+        move_sound = GameObject.Find("Move_Background").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,6 +29,7 @@ public class MoveBackground : MonoBehaviour
     {
         if (DoStage1.Stage1_Controll == false)
         {
+            move_sound.Play();
             background.transform.position = new Vector3(background.transform.position.x * -1, background.transform.position.y, background.transform.position.z);
             if (!rotation)
             {

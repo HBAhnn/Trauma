@@ -14,6 +14,7 @@ public class StartScenario : MonoBehaviour
 
     AudioSource[] Intro_Sounds = new AudioSource[4];
 
+    AudioSource BGM;
 
     int index;
 
@@ -26,6 +27,9 @@ public class StartScenario : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        BGM = GameObject.Find("First_bgm").GetComponent<AudioSource>();
+        BGM.Play();
+
         index = 0;
 
         Canvas = GameObject.Find("Canvas");

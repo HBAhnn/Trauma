@@ -18,4 +18,9 @@ public class DoStage3 : MonoBehaviour
     {
         
     }
+
+    private void OnEnable()
+    {
+        
+    }
 }

@@ -31,6 +31,9 @@ public class Key_Board : MonoBehaviour
 
     public GameObject mail;
 
+    public GameObject Toclose1;
+    public GameObject Toclose2;
+
 
 
     // Start is called before the first frame update
@@ -68,6 +71,8 @@ public class Key_Board : MonoBehaviour
     {
         DoStage3.Stage3_Controll = true;
         Clear_Lock.Play();
+        Toclose1.GetComponent<BoxCollider2D>().enabled = false;
+        Toclose2.GetComponent<BoxCollider2D>().enabled = false;
 
         //Close Button Images
         gameObject.GetComponent<SpriteRenderer>().enabled = false;

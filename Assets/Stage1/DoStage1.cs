@@ -21,10 +21,12 @@ public class DoStage1 : MonoBehaviour
 
     IEnumerator Start_Text()
     {
+        GameObject.Find("Subtitle_bar").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         Intro.SetActive(true);
         Intro_sound.Play();
         yield return new WaitForSeconds(6.5f);
 
+        GameObject.Find("Subtitle_bar").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
         Intro.SetActive(false);
         Stage1_Controll = false;
         Scroll.SetActive(true);
