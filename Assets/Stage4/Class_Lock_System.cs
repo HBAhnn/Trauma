@@ -37,6 +37,8 @@ public class Class_Lock_System : MonoBehaviour
     public GameObject Toclose1;
     public GameObject Toclose2;
 
+    public GameObject Light_door;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -97,6 +99,16 @@ public class Class_Lock_System : MonoBehaviour
 
         subtitle2.SetActive(false);
         GameObject.Find("Subtitle_bar").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+
+
+        FadeSystem.GetComponent<Fade>().DoFade(2f);
+        yield return new WaitForSeconds(2f);
+
+
+        Light_door.SetActive(true);
+        FadeSystem.GetComponent<Fade>().StopFade(1f);
+        yield return new WaitForSeconds(4f);
+
 
         FadeSystem.GetComponent<Fade>().DoFade(2f);
         yield return new WaitForSeconds(2f);

@@ -113,28 +113,28 @@ public class StartScenario : MonoBehaviour
         Invoke("StartScene", 12f);
         Invoke("Fade", 12f);
         Invoke("StartTitle", 14f);
-        Invoke("EndTitle", 18f);
-        Invoke("EndScene", 20f);
+        Invoke("EndTitle", 19f);
+        Invoke("EndScene", 21f);
 
         //Third
-        Invoke("Fade", 18f);
-        Invoke("StartScene", 20f);
-        Invoke("Fade", 20f);
-        Invoke("StartTitle", 22f);
-        Invoke("EndTitle", 27f);
-        Invoke("EndScene", 29f);
+        Invoke("Fade", 19f);
+        Invoke("StartScene", 21f);
+        Invoke("Fade", 21f);
+        Invoke("StartTitle", 23f);
+        Invoke("EndTitle", 28f);
+        Invoke("EndScene", 30f);
 
-        Invoke("Fade",27f);
+        Invoke("Fade",28f);
 
         //Fourth
-        Invoke("StartScene", 29f);
-        Invoke("Fade", 29f);
-        Invoke("StartTitle", 31f);
-        Invoke("EndTitle", 36f);
-        Invoke("Fade", 36f);
-        Invoke("EndScene", 38f);
+        Invoke("StartScene", 30f);
+        Invoke("Fade", 30f);
+        Invoke("StartTitle", 32f);
+        Invoke("EndTitle", 37f);
+        Invoke("Fade", 37f);
+        Invoke("EndScene", 39f);
 
-        Invoke("StartGame", 38);
+        Invoke("StartGame", 39f);
 
 
     }
